@@ -73,7 +73,7 @@ export default defineComponent({
     };
   },
   methods: {
-    getTutorial(id: any) {
+    getTutorial(id: string) {
       TutorialDataService.get(id)
         .then((response: ResponseData) => {
           this.currentTutorial = response.data;
@@ -127,7 +127,7 @@ export default defineComponent({
   },
   mounted() {
     this.message = "";
-    this.getTutorial(this.$route.params.id);
+    this.getTutorial(this.$route.params.id as string);
   },
 });
 </script>
